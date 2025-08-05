@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74306adc325c70f4a9a31a191ba86abb, type: 3}
+  m_Name: Close
+  m_EditorClassIdentifier: 
+  session_name: Close
+  steps:
+  - debug_name: Origin
+    theta_degrees: 0
+    phi_ratio: 0
+    radius: 15
+    transition_speed: 0
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: East
+    theta_degrees: 10
+    phi_ratio: 0
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: NorthEast
+    theta_degrees: 10
+    phi_ratio: 0.125
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: North
+    theta_degrees: 10
+    phi_ratio: 0.25
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: NorthWest
+    theta_degrees: 10
+    phi_ratio: 0.375
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: West
+    theta_degrees: 10
+    phi_ratio: 0.5
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: SouthWest
+    theta_degrees: 10
+    phi_ratio: 0.625
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: South
+    theta_degrees: 10
+    phi_ratio: 0.75
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
+  - debug_name: SouthEast
+    theta_degrees: 10
+    phi_ratio: 0.875
+    radius: 15
+    transition_speed: 5
+    static_duration: 3
+    play_sound_cue: 1
