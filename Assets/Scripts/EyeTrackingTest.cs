@@ -29,6 +29,9 @@ public class EyeTrackingTest : MonoBehaviour
     public Renderer head_cursor_renderer_ref;
     public Renderer left_cursor_renderer_ref;
     public Renderer right_cursor_renderer_ref;
+    public GameObject calibration_textbox_ref;
+    public GameObject free_textbox_ref;
+    public GameObject restricted_textbox_ref;
 
 
     [Header("=== Settings ===")]
@@ -51,6 +54,7 @@ public class EyeTrackingTest : MonoBehaviour
         Instance = this;
         reshuffled_trials = Reshuffle<Trial>(trials, true);
         current_trial_index = -1;
+        Unity.XR.Oculus.Performance.TrySetDisplayRefreshRate(90f);
         writer.Initialize();
 
         // Mod the cursor and target scales
@@ -63,6 +67,7 @@ public class EyeTrackingTest : MonoBehaviour
         writer.AddPayload(-1);
         writer.AddPayload("Calibration");
         writer.WriteLine(true);
+
     }
 
     // The only thing we do at the start is allow the user to calibrate their head rotation forward.
@@ -144,12 +149,8 @@ public class EyeTrackingTest : MonoBehaviour
 
         // We don't force the calibrator to play JUST yet. We want the user to wait until they are prepared.
         // They should be able to start the next trial upon clicking the Start button again.
-        // The only exception to this is if we're engaging in the first trial - then we force them to start the calibration.
-        if (current_trial_index == 0) Calibrator.Instance.Play();
-        else {
             ToggleCursorRenderers(true);
             gaze_target_ref.localPosition = Vector3.forward;
-        }
     }
 
     public void ToggleCursorRenderers(bool set_to)

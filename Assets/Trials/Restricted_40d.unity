@@ -297,7 +297,7 @@ MonoBehaviour:
     fileName: Restricted_40d
     dirName: User_0
     writeUnixTime: 1
-    append_zero_to_filename: 0
+    append_zero_to_filename: 1
     columns:
     - event
     - frame
