@@ -5314,7 +5314,7 @@ MonoBehaviour:
   head_cursor_local_pos: {x: 0, y: 0, z: 0}
   writer:
     fileName: trials
-    dirName: Standalone-Battery
+    dirName: Tethered
     writeUnixTime: 1
     append_zero_to_filename: 1
     columns:
