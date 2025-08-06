@@ -6,14 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Calibration.unity
+    path: Assets/Trials/Calibration.unity
     guid: b4aa95c33c43d8e409c49b80de45a4b7
   - enabled: 1
-    path: Assets/Scenes/StaticHead_Close.unity
+    path: Assets/Trials/Restricted_10d.unity
     guid: 58c30164ce473844c815f77237cb76e3
   - enabled: 1
-    path: Assets/Scenes/DynamicHead_Close.unity
+    path: Assets/Trials/Restricted_20d.unity
+    guid: 919955d9aec6a974cbb2394633e448eb
+  - enabled: 1
+    path: Assets/Trials/Restricted_30d.unity
+    guid: 9e44036a671844a408aaf323de54fd04
+  - enabled: 1
+    path: Assets/Trials/Restricted_40d.unity
+    guid: 33be9a53c42bf254086d0a7b2250a7c8
+  - enabled: 1
+    path: Assets/Trials/Free_10d.unity
     guid: 633a33d0ad0be524d9f305bd3bb28082
+  - enabled: 1
+    path: Assets/Trials/Free_20d.unity
+    guid: 4432644af40c5ca42b691a1c121539d8
+  - enabled: 1
+    path: Assets/Trials/Free_30d.unity
+    guid: b80dfc31934e06947bac8b389ba220ed
+  - enabled: 1
+    path: Assets/Trials/Free_40d.unity
+    guid: e2a301f4808fc264594850c5499d1f85
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: f9d7c743422a01a4cbb87d70367630ec, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a7e329c93592c084099209d94eca39b1, type: 2}

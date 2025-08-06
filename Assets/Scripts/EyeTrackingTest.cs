@@ -32,6 +32,8 @@ public class EyeTrackingTest : MonoBehaviour
 
 
     [Header("=== Settings ===")]
+    public float target_angular_size = 2.3f;
+    public float cursor_angular_size = 1f;
     public Trial[] trials;
     public bool randomize_trials;
 
@@ -51,6 +53,12 @@ public class EyeTrackingTest : MonoBehaviour
         current_trial_index = -1;
         writer.Initialize();
 
+        // Mod the cursor and target scales
+        gaze_target_ref.localScale = Vector3.one * CalculateScaleFromAngularSize(target_angular_size);
+        head_cursor_ref.localScale = Vector3.one * CalculateScaleFromAngularSize(cursor_angular_size);
+        left_cursor_ref.localScale = Vector3.one * CalculateScaleFromAngularSize(cursor_angular_size);
+        right_cursor_ref.localScale = Vector3.one * CalculateScaleFromAngularSize(cursor_angular_size);
+
         // First: calibration write + timestamp
         writer.AddPayload(-1);
         writer.AddPayload("Calibration");
@@ -64,7 +72,7 @@ public class EyeTrackingTest : MonoBehaviour
     public void CalibrateHeadForward()
     {
         cal_follower_ref.CalculateRotationOffset();
-        head_cursor_ref.localPosition = head_ref.InverseTransformDirection(gaze_target_ref.position - head_ref.position).normalized * 15f;
+        head_cursor_ref.localPosition = head_ref.InverseTransformDirection(gaze_target_ref.position - head_ref.position).normalized;
     }
 
     // Trials will actually be added additively, to ensure that we don't lose any references to calibrations, etc.
@@ -138,7 +146,10 @@ public class EyeTrackingTest : MonoBehaviour
         // They should be able to start the next trial upon clicking the Start button again.
         // The only exception to this is if we're engaging in the first trial - then we force them to start the calibration.
         if (current_trial_index == 0) Calibrator.Instance.Play();
-        else ToggleCursorRenderers(true);
+        else {
+            ToggleCursorRenderers(true);
+            gaze_target_ref.localPosition = Vector3.forward;
+        }
     }
 
     public void ToggleCursorRenderers(bool set_to)
@@ -173,6 +184,12 @@ public class EyeTrackingTest : MonoBehaviour
 
         // Return the randomized subarray
         return outcome;
+    }
+
+    public float CalculateScaleFromAngularSize(float a) {
+        // tan(a) = opp/adj. If adj==1, then tan(a)=opp
+        // Therefore, scale = 2f * tan(a)
+        return 2f*Mathf.Tan((a*Mathf.Deg2Rad)/2f);
     }
 
     void OnApplicationQuit()

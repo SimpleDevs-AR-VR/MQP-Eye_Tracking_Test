@@ -1,0 +1,8 @@
+﻿unix_ms,trial_index,trial_name
+1754440957034,-1,Calibration
+1754440973582,0,DynamicHead_Far
+1754441017084,1,DynamicHead_Close
+1754441064986,2,StaticHead_Middle
+1754441115739,3,DynamicHead_Middle
+1754441162727,4,StaticHead_Far
+1754441213448,5,StaticHead_Close

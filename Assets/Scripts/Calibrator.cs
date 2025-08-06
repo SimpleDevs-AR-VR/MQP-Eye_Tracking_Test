@@ -138,7 +138,7 @@ public class Calibrator : MonoBehaviour
             while (Vector3.Distance(gaze_target_ref.localPosition, target_dir) > 0.05f)
             {
                 diff = target_dir - gaze_target_ref.localPosition;
-                gaze_target_ref.position += diff.normalized * cur_step.transition_speed * simulated_frame_timestep;
+                gaze_target_ref.position += diff.normalized * cur_step.transition_speed * Time.unscaledDeltaTime;
                 yield return null;
             }
         }
